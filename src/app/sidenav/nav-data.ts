@@ -1,4 +1,5 @@
-export const navbarData = [
+import { INavbarData } from './helper';
+export const navbarData :INavbarData[] = [
 
   {
     routeLink: 'dashboard',
@@ -18,7 +19,17 @@ export const navbarData = [
   {
     routeLink: 'coupens',
     icon: 'confirmation_number',
-    label: 'Coupens'
+    label: 'Coupens',
+    items :[
+        {
+          routeLink :'coupens/list',
+          label : 'List Coupens',
+        },
+        {
+          routeLink :'coupens/create',
+          label : 'Create Coupens'
+        }
+    ]
   },
   {
     routeLink: 'pages',
