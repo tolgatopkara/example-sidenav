@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { INavbarData } from './helper';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -47,7 +48,7 @@ export class SidenavComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
-
+  multiple : boolean = false ;
 
   @HostListener('window:resize',[`$event`])
   onResize(event : any ){
@@ -72,6 +73,17 @@ export class SidenavComponent implements OnInit {
     this.collapsed = false
     this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
     console.log('sidenav component closeSidenav worked')
+  }
+
+  handleClick(item:INavbarData) : void{
+    if(!this.multiple){
+      for(let modelItem of this.navData){
+        if(item !== modelItem && modelItem.expanded){
+          modelItem.expanded = false;
+        }
+      }
+    }
+    item.expanded=!item.expanded;
   }
 
 }
