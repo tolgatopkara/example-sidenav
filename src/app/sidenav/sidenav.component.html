@@ -17,6 +17,7 @@
           class="sidenav-nav-link"
           (click)="handleClick(data)"
           *ngIf="data.items && data.items.length > 0"
+          [ngClass]="getActiveClass(data)"
         >
           <span class="sidenav-link-icon material-symbols-outlined">{{
             data.icon
@@ -38,6 +39,7 @@
           [routerLink]="[data.routeLink]"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click) ="shrinkItems(data)"
         >
           <span class="sidenav-link-icon material-symbols-outlined">{{
             data.icon

@@ -7,14 +7,11 @@
   height: 100vh;
   z-index: 10;
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
-
   .logo-container {
     display: flex;
     align-items: center;
     padding: 0.938rem 0.938rem 0 0.938rem;
     width: 100%;
-
-
     .logo {
       background: #fff;
       text-align: center;
@@ -27,14 +24,12 @@
       cursor: pointer;
       border: none;
     }
-
     .logo-text {
       margin-left: 1.5rem;
       font-size: 24px;
       font-weight: 700;
       color: #fff;
     }
-
     .btn-close {
       margin-left: auto;
       cursor: pointer;
@@ -43,16 +38,13 @@
       border-radius: 50%;
       background-color: transparent;
       border: none;
-
       span {
         color: #fff;
         font-size: 24px;
       }
     }
   }
-
 }
-
 
 .sidenav-collapsed {
   width: 16.5625rem;
@@ -66,11 +58,9 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-
-   .sidenav-nav-item{
+    .sidenav-nav-item{
     width: 100%;
     margin-bottom: 0.625rem;
-
     .sidenav-nav-link{
       display: flex;
       align-items: center;
@@ -79,7 +69,6 @@
       color: #f3f3f3;
       text-decoration: none;
       transition: all .3s ease;
-
       .sidenav-link-icon {
         font-size: 22px;
         width: 2rem;
@@ -87,7 +76,6 @@
         margin: 0 0.5rem;
         text-align: center;
       }
-
       .sidenav-link-text {
         margin-left: 1.5rem;
       }
@@ -95,16 +83,12 @@
     .sidenav-nav-link:hover{
       background-color: #fff;
       color: #000;
-
       .menu-collapse-icon {
         color : #000
       }
      }
    }
-
-
 }
-
 
 .active {
   background-color: #fff;
@@ -115,6 +99,10 @@
   }
 }
 
+.active-sublevel {
+  color :#f3f3f3 !important;
+  // opacity: 1 !important;
+}
 .menu-collapse-icon {
   font-size: 25px;
   width: 2rem;
@@ -196,5 +184,5 @@
   //works on firefox
   .scrollwrap {
     scrollbar-width: thin;
-    scrollbar-color: #556268;
+    scrollbar-color: #556268 transparent;
   }
