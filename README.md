@@ -1,4 +1,5 @@
 # ExampleSidenav
+This is a note-app project based on Angularistic's youtube video. Project converted to Angular 15 and Standalone Components and used TailwindCSS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
