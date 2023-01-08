@@ -1,9 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { INavbarData, fadeInOut } from './helper';
 import { state, style, trigger, transition, animate } from '@angular/animations';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
+  standalone  : true,
+  imports     : [NgIf,NgClass,NgForOf,RouterModule],
   selector: 'app-sublevel-menu',
   template: `
     <ul *ngIf="collapsed && data.items && data.items.length > 0"
@@ -62,7 +65,7 @@ import { Router } from '@angular/router';
     ])
   ]
 })
-export class SublevelMenuComponent implements OnInit {
+export class SublevelMenuComponent  {
 
 
   @Input() data: INavbarData = {
@@ -74,7 +77,7 @@ export class SublevelMenuComponent implements OnInit {
   @Input() collapsed = false;
   @Input() animating: boolean | undefined;
   @Input() expanded: boolean | undefined;
-  @Input() multiple: boolean = false;
+  @Input() multiple = false;
 
 
 
@@ -83,13 +86,11 @@ export class SublevelMenuComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-  }
 
   handleClick(item: any): void {
     if (!this.multiple) {
       if (this.data.items && this.data.items.length > 0) {
-        for (let modelItem of this.data.items) {
+        for (const modelItem of this.data.items) {  
           if (item !== modelItem && modelItem.expanded) {
             modelItem.expanded = false;
           }

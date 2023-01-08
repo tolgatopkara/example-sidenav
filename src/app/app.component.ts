@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
+import { SidenavComponent } from "./sidenav/sidenav.component";
+import { BodyComponent } from './body/body.component';
 
 interface SideNavToggle {
   screenWidth : number;
   collapsed:boolean;
 }
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    standalone: true,
+    selector: 'app-root',
+    template: `<app-sidenav (onToggleSidenav)="onToggleSidenav($event)"></app-sidenav>
+  <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+  ></app-body>
+   `,
+    imports: [SidenavComponent , BodyComponent]
 })
 export class AppComponent {
   title = 'example-sidenav';

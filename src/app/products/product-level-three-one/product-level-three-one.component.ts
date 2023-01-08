@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-product-level-three-one',
-  templateUrl: './product-level-three-one.component.html',
-  styleUrls: ['./product-level-three-one.component.scss']
+  template: `<h1>Product Level Three One</h1> `
 })
-export class ProductLevelThreeOneComponent implements OnInit {
+export class ProductLevelThreeOneComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

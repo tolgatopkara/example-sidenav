@@ -1,12 +1,25 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
+import { PreloadAllModules, provideRouter, Route, withPreloading, withRouterConfig } from '@angular/router';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core'
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
+const appRoutes: Route[] = [
+  {
+    path: '',
+    loadChildren: () => import("./app/routes/app.routes").then(m => m.routes)
+  },
+];
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent,
+  {
+    providers: [
+    provideAnimations(),
+    provideRouter(appRoutes, withPreloading(PreloadAllModules), withRouterConfig({ onSameUrlNavigation: 'reload' })),
+    importProvidersFrom(BrowserAnimationsModule,BrowserModule)
+
+]
+  }).catch((err) => console.log(err)
+  );
+

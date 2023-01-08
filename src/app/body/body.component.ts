@@ -1,8 +1,15 @@
 import { Component, Input } from '@angular/core';
+import {  RouterModule } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports : [RouterModule, NgClass],
   selector: 'app-body',
-  templateUrl: './body.component.html',
+  template : `<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+</div>
+`,
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent  {

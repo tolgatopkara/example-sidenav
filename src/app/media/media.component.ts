@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-media',
-  templateUrl: './media.component.html',
-  styleUrls: ['./media.component.scss']
+  template : `<p>media works</p> `
 })
-export class MediaComponent implements OnInit {
+export class MediaComponent  {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

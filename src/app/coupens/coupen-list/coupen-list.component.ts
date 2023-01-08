@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-coupen-list',
-  templateUrl: './coupen-list.component.html',
-  styleUrls: ['./coupen-list.component.scss']
+  template : `<p>coupen list works</p> `
 })
-export class CoupenListComponent implements OnInit {
+export class CoupenListComponent  {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
