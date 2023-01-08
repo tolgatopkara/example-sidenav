@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   selector: 'app-pages',
   template : `<p>pages works</p> `
 })
-export class PagesComponent  {
+export default class PagesComponent  {
 
 }

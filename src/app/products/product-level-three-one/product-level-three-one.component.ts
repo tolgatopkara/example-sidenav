@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-product-level-three-one',
   template: `<h1>Product Level Three One</h1> `
 })
-export class ProductLevelThreeOneComponent  {
+export default class ProductLevelThreeOneComponent  {
 
 
 }

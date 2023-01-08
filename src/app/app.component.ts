@@ -9,7 +9,7 @@ interface SideNavToggle {
 @Component({
     standalone: true,
     selector: 'app-root',
-    template: `<app-sidenav (onToggleSidenav)="onToggleSidenav($event)"></app-sidenav>
+    template: `<app-sidenav (ToggleSidenav)="onToggleSidenav($event)"></app-sidenav>
   <app-body
     [collapsed]="isSideNavCollapsed"
     [screenWidth]="screenWidth"

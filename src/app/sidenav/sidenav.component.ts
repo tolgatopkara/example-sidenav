@@ -30,18 +30,18 @@ interface SideNavToggle {
 })
 export class SidenavComponent implements OnInit {
 
-  @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
+  @Output() ToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
-  multiple: boolean = false;
+  multiple = false;
 
   @HostListener('window:resize', [`$event`])
-  onResize(event: any) {
+  onResize() {
     this.screenWidth = window.innerWidth;
     if (this.screenWidth <= 768) {
       this.collapsed = false;
-      this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+      this.ToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
     }
   }
 
@@ -55,12 +55,12 @@ export class SidenavComponent implements OnInit {
 
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
-    this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    this.ToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
     console.log('sidenav component toggleCollapse worked')
   }
   closeSidenav(): void {
     this.collapsed = false
-    this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    this.ToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
     console.log('sidenav component closeSidenav worked')
   }
 
@@ -75,7 +75,7 @@ export class SidenavComponent implements OnInit {
 
   shrinkItems(item: INavbarData): void {
     if (!this.multiple) {
-      for (let modelItem of this.navData) {
+      for (const modelItem of this.navData) {  // wtf is this? 
         if (item !== modelItem && modelItem.expanded) {
           modelItem.expanded = false;
         }

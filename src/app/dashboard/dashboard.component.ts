@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-dashboard',
   template:    `<h1>Dashboard</h1>`
 })
-export class DashboardComponent  {
+export default class DashboardComponent  {
 
 
 }

@@ -10,6 +10,10 @@ const appRoutes: Route[] = [
     path: '',
     loadChildren: () => import("./app/routes/app.routes").then(m => m.routes)
   },
+  {
+    path : '**' ,
+    redirectTo : 'dashboard'
+},
 ];
 
 bootstrapApplication(AppComponent,

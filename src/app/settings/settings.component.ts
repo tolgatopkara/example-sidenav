@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   template : `<p>settings works</p> `
 
 })
-export class SettingsComponent  {
+export default class SettingsComponent  {
 
 }

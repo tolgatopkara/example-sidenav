@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-coupen-list',
   template : `<p>coupen list works</p> `
 })
-export class CoupenListComponent  {
+export default class CoupenListComponent  {
 
 
 

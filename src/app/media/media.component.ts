@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-media',
   template : `<p>media works</p> `
 })
-export class MediaComponent  {
+export default class MediaComponent  {
 
 
 

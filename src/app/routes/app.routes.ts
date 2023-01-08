@@ -1,22 +1,20 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { MediaComponent } from '../media/media.component';
-import { PagesComponent } from '../pages/pages.component';
-import { SettingsComponent } from '../settings/settings.component';
-import { StatisticsComponent } from '../statistics/statistics.component';
-
  export const routes: Routes = [
   {
     path : '' , redirectTo :'dashboard' , pathMatch:'full'
   },
+  
   {
-    path : 'dashboard',component:DashboardComponent
+    path : 'dashboard',
+    loadComponent : () => import('../dashboard/dashboard.component')
   },
   {
-    path : 'media' , component : MediaComponent
+    path : 'media' ,
+    loadComponent : () => import('../media/media.component')
   },
   {
-    path : 'settings' , component : SettingsComponent
+    path : 'settings' ,
+    loadChildren : () => import('../settings/settings.routes').then(m => m.routes)
   },
   {
     path : 'products',
@@ -27,10 +25,12 @@ import { StatisticsComponent } from '../statistics/statistics.component';
     loadChildren : () => import('../coupens/coupens.routes').then(m => m.routes)
   },
   {
-    path : 'pages' , component : PagesComponent
+    path : 'pages' ,
+    loadComponent : () => import('../pages/pages.component')
   },
   {
-    path : 'statistics' , component : StatisticsComponent
+    path : 'statistics' ,
+    loadComponent : () => import('../statistics/statistics.component')
   }
 
 ];

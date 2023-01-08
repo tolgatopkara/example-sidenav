@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-statistics',
   template : `<p>statistics works</p> `
 })
-export class StatisticsComponent {
+export default class StatisticsComponent {
 
 
 

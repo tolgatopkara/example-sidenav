@@ -87,10 +87,10 @@ export class SublevelMenuComponent  {
 
 
 
-  handleClick(item: any): void {
+  handleClick(item: INavbarData): void {
     if (!this.multiple) {
       if (this.data.items && this.data.items.length > 0) {
-        for (const modelItem of this.data.items) {  
+        for (const modelItem of this.data.items) {
           if (item !== modelItem && modelItem.expanded) {
             modelItem.expanded = false;
           }

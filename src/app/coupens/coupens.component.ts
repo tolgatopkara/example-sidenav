@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-coupens',
   template : `<p>coupens works</p> `
 })
-export class CoupensComponent  {
+export  default class CoupensComponent  {
 
 
 
